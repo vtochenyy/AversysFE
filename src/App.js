@@ -1,4 +1,5 @@
 import { Button } from "antd";
+import axios from "axios";
 import {
   LineChart,
   PieChart,
@@ -9,44 +10,10 @@ import {
 } from "react-chartkick";
 import "chartkick/chart.js";
 import "./App.css";
-import { useState } from "react";
-import axios from "axios";
 
 function App() {
-  const [axiosData, setAxiosData] = useState();
-  const axiosRequest = () => {
-    axios
-      .post(
-        "https://localhost:9876/users/register",
-        {
-          firstName: "Test",
-          lastName: "UUID",
-          login: "Stytlaya sobaka",
-          password: "qwerty431443nlnf",
-          age: 24,
-        },
-        {
-          headers: {
-            "x-apikey": "59a7ad19f5a9fa0808f11931",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-          },
-        }
-      )
-      .then((data) => {
-        setAxiosData(data);
-      });
-  };
   return (
     <div className="App">
-      <button
-        onClick={() => {
-          axiosRequest();
-          console.log(axiosData);
-        }}
-      >
-        axios
-      </button>
       <LineChart
         data={{
           "2021-05-13": 2,
@@ -100,7 +67,19 @@ function App() {
         xtitle="Subscribes"
         ytitle="Likes"
       />
-      <Button style={{ margin: "20px" }} type="primary">
+      <Button
+        onClick={() => {
+          axios.post("http://localhost:9876/users/register", {
+            firstName: "Test",
+            lastName: "UUID",
+            login: "Stytlaya sobaka",
+            password: "qwerty431443nlnf",
+            age: 24,
+          });
+        }}
+        style={{ margin: "20px" }}
+        type="primary"
+      >
         dsd
       </Button>
       <Button style={{ margin: "20px" }} type="default">
