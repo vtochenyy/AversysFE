@@ -11,7 +11,7 @@ const RegisterPage = () => {
   });
   return (
     <div>
-      <div className={style.check}>register</div>
+      <div className={style.check}>register check</div>
       <div>
         <Form
           onFinish={(data) => {

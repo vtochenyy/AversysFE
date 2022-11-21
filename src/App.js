@@ -11,12 +11,10 @@ import axios from "axios";
 import "chartkick/chart.js";
 import { Link } from "react-router-dom";
 import "./App.css";
-import InfoRoadMap from "./components/infoRoadMap/InfoRoadMap";
 
 function App() {
   return (
     <div className="App">
-      <InfoRoadMap />
       <Button
         onClick={() => {
           axios.post("http://localhost:9876/users/register", {

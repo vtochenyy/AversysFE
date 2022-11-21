@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
 import { ConfigProvider } from "antd";
 import "antd/dist/antd.variable.min.css";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-
+import InfoRoadMap from "../src/components/infoRoadMap/InfoRoadMap";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 ConfigProvider.config({
   theme: {
@@ -23,7 +23,7 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <ConfigProvider>
-          <App />
+          <InfoRoadMap />
         </ConfigProvider>
       </BrowserRouter>
     </Provider>
