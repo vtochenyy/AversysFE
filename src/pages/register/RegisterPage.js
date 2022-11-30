@@ -6,7 +6,7 @@ const RegisterPage = () => {
   // const dispatch = useDispatch();
   return (
     <div>
-      <div className={style.check}>register check</div>
+      <div className={style.check}>register checyk</div>
       <div>
         <Form
           onFinish={(data) => {
