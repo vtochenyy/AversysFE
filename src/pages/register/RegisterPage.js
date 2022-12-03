@@ -1,21 +1,16 @@
 import { Button, Form, Input } from "antd";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { createRegisterState } from "../../redux/reducers/registerReducer";
+import axios from "axios";
+// import { useDispatch } from "react-redux";
 import style from "./style.module.scss";
 const RegisterPage = () => {
-  const dispatch = useDispatch();
-  const [registerState, setRegisterState] = useState();
-  const checkFuncForRegisterData = useSelector((state) => {
-    console.log(state.registerData.registerInfo);
-  });
+  // const dispatch = useDispatch();
   return (
     <div>
-      <div className={style.check}>register check</div>
+      <div className={style.check}>register checyk</div>
       <div>
         <Form
           onFinish={(data) => {
-            setRegisterState(data);
+            axios.post("http://localhost:9876/users/register", data);
           }}
         >
           <Form.Item name="firstName">
@@ -30,17 +25,10 @@ const RegisterPage = () => {
           <Form.Item name="password">
             <Input placeholder="Пароль" />
           </Form.Item>
-          <Button
-            onClick={() => {
-              dispatch(createRegisterState(registerState));
-            }}
-            htmlType="submit"
-          >
-            фыв
-          </Button>
+          <Button htmlType="submit">фыв</Button>
         </Form>
       </div>
-      <div>{checkFuncForRegisterData}</div>
+      <button>sad</button>
     </div>
   );
 };
