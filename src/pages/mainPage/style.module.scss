@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.mainPage {
+  height: 100vh;
+  overflow-y: hidden;
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+}
+
+.imageBlock img {
+  width: 115%;
+  height: 100%;
+  object-fit: cover;
+}
+.navBlock {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 0;
+  background-color: #256152;
+}
+.navBlockContent {
+  display: flex;
+  border: 10px solid rgba(255, 255, 0, 0.63);
+  justify-content: center;
+  flex-direction: column;
+  margin: 175px 0;
+  padding: 40px 0;
+}
+.headerNavBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 120px;
+  text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+}
+.headerNavBlock h2 {
+  color: #ffa41b;
+  font-family: "Sen";
+  font-weight: 400;
+  margin: 0 0 0 60px;
+}
+.headerNavBlock img {
+  margin: 28px 0 0 0;
+}
+.navBlockContent > span {
+  margin: 0 0 20px 0;
+  font-size: 42px;
+  font-family: "Sen";
+  font-weight: 700;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  line-height: 38px;
+  text-align: center;
+  color: #fff;
+}
+.navImages {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: 30px auto;
+}
+.controllMessage {
+  font-size: 24px;
+  font-family: "Sen";
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+}
