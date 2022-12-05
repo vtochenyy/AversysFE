@@ -15,7 +15,8 @@ ConfigProvider.config({
     errorColor: "#ff4d4f",
     warningColor: "#faad14",
     successColor: "#52c41a",
-    infoColor: "#1890ff",
+    infoColor: "#0b4436",
+    greenColor: "#0b4436",
   },
 });
 root.render(
