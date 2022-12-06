@@ -1,5 +1,6 @@
 import { Button, Form, Input } from "antd";
 import axios from "axios";
+import ImageNavigation from "../../components/navImages/ImageNavigation";
 import { authorizedConfig } from "./authorizedConfig";
 import style from "./style.module.scss";
 const AutorizedPage = () => {
@@ -8,24 +9,8 @@ const AutorizedPage = () => {
       <div className={style.loginFormBlock}>
         <h2>AVERSYS</h2>
         <span>Авторизация пользователя</span>
-        <div className={style.authorizedImageGroup}>
-          <img src={authorizedConfig.authAbout} alt="authAbout is not found" />
-          <img
-            src={authorizedConfig.authControl}
-            alt="authControll is not found"
-          />
-          <img
-            src={authorizedConfig.authAnalytics}
-            alt="authAnalytics is not found"
-          />
-          <img
-            src={authorizedConfig.authSupport}
-            alt="authSupport is not found"
-          />
-          <img
-            src={authorizedConfig.authSetting}
-            alt="authSetting is not found"
-          />
+        <div>
+          <ImageNavigation />
         </div>
         <Form
           className={style.formStyles}
