@@ -1,5 +1,6 @@
 import { Button, Form, Input } from "antd";
 import axios from "axios";
+import { root } from "../../api/root_api";
 import ImageNavigation from "../../components/navImages/ImageNavigation";
 import { authorizedConfig } from "./authorizedConfig";
 import style from "./style.module.scss";
@@ -16,7 +17,7 @@ const AutorizedPage = () => {
           className={style.formStyles}
           onFinish={(loginData) => {
             console.log(loginData);
-            axios.post("http://localhost:9876/users/login", loginData);
+            axios.post(root.LOGIN, loginData);
           }}
         >
           <Form.Item name="login">

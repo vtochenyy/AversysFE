@@ -1,5 +1,6 @@
 import { Button, Form, Input } from "antd";
 import axios from "axios";
+import { root } from "../../api/root_api";
 // import { useDispatch } from "react-redux";
 import style from "./style.module.scss";
 const RegisterPage = () => {
@@ -10,7 +11,7 @@ const RegisterPage = () => {
       <div>
         <Form
           onFinish={(data) => {
-            axios.post("http://localhost:9876/users/register", data);
+            axios.post(root.REGISTER, data);
           }}
         >
           <Form.Item name="firstName">
