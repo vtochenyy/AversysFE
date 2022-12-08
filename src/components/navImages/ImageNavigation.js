@@ -1,26 +1,20 @@
-import asysAbout from "../../images/navImages/asysAbout.svg";
-import asysAnalyt from "../../images/navImages/asysAnalyt.svg";
-import asysSupport from "../../images/navImages/asysSupport.svg";
-import asysConfig from "../../images/navImages/asysConfig.svg";
-import asysControl from "../../images/navImages/asysControl.svg";
 import style from "./style.module.scss";
+import { imagesNavComponent } from "../../images/imagesConfig";
 
 const ImageNavigation = () => {
-  const authorizedConfig = {
-    asysAbout,
-    asysAnalyt,
-    asysSupport,
-    asysConfig,
-    asysControl,
-  };
-
   return (
     <div className={style.authorizedImageGroup}>
-      <img src={authorizedConfig.asysAbout} alt="asysAbout is not found" />
-      <img src={authorizedConfig.asysControl} alt="asysControl is not found" />
-      <img src={authorizedConfig.asysAnalyt} alt="asysAnalyt is not found" />
-      <img src={authorizedConfig.asysSupport} alt="asysSupport is not found" />
-      <img src={authorizedConfig.asysConfig} alt="asysConfig is not found" />
+      <img src={imagesNavComponent.asysAbout} alt="asysAbout is not found" />
+      <img
+        src={imagesNavComponent.asysControl}
+        alt="asysControl is not found"
+      />
+      <img src={imagesNavComponent.asysAnalyt} alt="asysAnalyt is not found" />
+      <img
+        src={imagesNavComponent.asysSupport}
+        alt="asysSupport is not found"
+      />
+      <img src={imagesNavComponent.asysConfig} alt="asysConfig is not found" />
     </div>
   );
 };
