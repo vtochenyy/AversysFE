@@ -1,4 +1,6 @@
+export const host = "http://localhost:9876";
+
 export const root = {
-  LOGIN: "http://localhost:9876/users/login",
-  REGISTER: "http://localhost:9876/users/register",
+  LOGIN: host + "/users/login",
+  REGISTER: host + "/users/register",
 };

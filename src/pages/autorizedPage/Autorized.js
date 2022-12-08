@@ -2,7 +2,7 @@ import { Button, Form, Input } from "antd";
 import axios from "axios";
 import { root } from "../../api/root_api";
 import ImageNavigation from "../../components/navImages/ImageNavigation";
-import { authorizedConfig } from "./authorizedConfig";
+import { imagesAuthorized } from "../../images/imagesConfig";
 import style from "./style.module.scss";
 const AutorizedPage = () => {
   return (
@@ -38,7 +38,7 @@ const AutorizedPage = () => {
       </div>
       <div className={style.authorizedImage}>
         <img
-          src={authorizedConfig.authorizedImage}
+          src={imagesAuthorized.authorizedImage}
           alt="authorized  not found"
         />
       </div>
