@@ -9,7 +9,6 @@ const InfoRoadMap = () => {
   const Page404 = lazy(() => import("../../pages/page404/Page404"));
   return (
     <Routes>
-      {/* <Route path="*" element={<Page404 />} /> */}
       <Route
         path="*"
         element={

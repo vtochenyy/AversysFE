@@ -1,17 +1,21 @@
 import { Button, Form, Input } from "antd";
-import axios from "axios";
-import { root } from "../../api/root_api";
-// import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import style from "./style.module.scss";
+import { createRegisterState } from "../../redux/reducers/registerReducer";
+import { getErrorsList } from "../../redux/reducers/errorList";
+
 const RegisterPage = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const errorList = useSelector((state) => {
+    return state.errorList.errorListData;
+  });
   return (
     <div>
-      <div className={style.check}>register checyk</div>
+      <div className={style.check}>register check</div>
       <div>
         <Form
           onFinish={(data) => {
-            axios.post(root.REGISTER, data);
+            dispatch(createRegisterState(data));
           }}
         >
           <Form.Item name="firstName">
@@ -26,10 +30,24 @@ const RegisterPage = () => {
           <Form.Item name="password">
             <Input placeholder="Пароль" />
           </Form.Item>
-          <Button htmlType="submit">фыв</Button>
+          <Button htmlType="submit">Отправить</Button>
         </Form>
       </div>
-      <button>sad</button>
+
+      <button
+        onClick={() => {
+          dispatch(getErrorsList);
+        }}
+      >
+        list
+      </button>
+      <button
+        onClick={() => {
+          console.log(errorList.data);
+        }}
+      >
+        const
+      </button>
     </div>
   );
 };
