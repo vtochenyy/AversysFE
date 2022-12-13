@@ -34,6 +34,9 @@ const PreviewPage = () => {
         <Button style={{ margin: "20px" }} type="ghost">
           MainPage
         </Button>
+        <Link to="/persArea">
+          <Button>Personal Area</Button>
+        </Link>
       </Link>
     </div>
   );

@@ -1,0 +1,55 @@
+.pageStructure {
+  display: flex;
+  width: 100%;
+  padding: 87px 124px 100px 104px;
+  justify-content: space-around;
+}
+.lastActivitiesBlock {
+  width: 100%;
+  margin: 80px 35px 0 0;
+  max-width: 951px;
+  text-align: center;
+}
+.lastActivitiesBlock h3 {
+  font-size: 40px;
+  font-family: "Sen";
+  font-weight: 700;
+  color: #ffa41b;
+}
+.lastActivitiesBlock p {
+  font-size: 32px;
+  font-family: "Sen";
+  color: #0b4436;
+}
+.userInfoBlock {
+  padding: 20px 30px 10px;
+  width: 100%;
+  max-width: 580px;
+  border-radius: 38px;
+  background-color: #256152;
+  text-align: center;
+}
+.userInfoBlock span {
+  font-size: 20px;
+  font-family: "Sen";
+  color: #ffa41b;
+}
+.userInfoBlock h2 {
+  font-size: 28px;
+  line-height: 40px;
+  font-family: "Sen";
+  margin: 0;
+  font-weight: 800;
+  color: #ffa41b;
+}
+.userInfoBlock > img {
+  width: 295px;
+  margin: 29px 0 43px 0;
+}
+.userInfoBlock p {
+  font-size: 24px;
+  font-family: "Sen";
+  color: #ffa41b;
+  margin: 0 0 5px 0;
+  font-style: normal;
+}

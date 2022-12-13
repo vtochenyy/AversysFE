@@ -7,6 +7,9 @@ const InfoRoadMap = () => {
   const RegisterPage = lazy(() => import("../../pages/register/RegisterPage"));
   const PreviewPage = lazy(() => import("../../PreviewPage"));
   const Page404 = lazy(() => import("../../pages/page404/Page404"));
+  const PersonalArea = lazy(() =>
+    import("../../pages/personalArea/PersonalArea")
+  );
   return (
     <Routes>
       <Route
@@ -46,6 +49,14 @@ const InfoRoadMap = () => {
         element={
           <React.Suspense fallback={<>...</>}>
             <MainPage />
+          </React.Suspense>
+        }
+      />
+      <Route
+        path="/persArea"
+        element={
+          <React.Suspense fallback={<>...</>}>
+            <PersonalArea />
           </React.Suspense>
         }
       />
