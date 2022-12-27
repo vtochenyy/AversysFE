@@ -8,7 +8,8 @@ import asysConfig from "./navImages/asysConfig.svg";
 import asysControl from "./navImages/asysControl.svg";
 import mainBackGround from "./mainPageImages/backgroundMan.jpg";
 import userImage from "./personalAreaImages/TestImg.svg";
-
+import loadImage from "./registerImages/userImg.svg";
+import aversysLogoWhiteBg from "./registerImages/aversysLogo.png";
 export const imagesPage404 = {
   image404,
 };
@@ -32,4 +33,9 @@ export const imagesNavComponent = {
 
 export const personalPageImage = {
   userImage,
+};
+
+export const registerPageImage = {
+  aversysLogoWhiteBg,
+  loadImage,
 };
