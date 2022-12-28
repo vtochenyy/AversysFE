@@ -22,18 +22,21 @@ const PreviewPage = () => {
       </Button>
       <Link to="/register">
         <Button style={{ margin: "20px" }} type="default">
-          dsd
+          Register
         </Button>
       </Link>
       <Link to="/autorized">
         <Button style={{ margin: "20px" }} type="dashed">
-          dsd
+          Authorized
         </Button>
       </Link>
       <Link to="/mainPage">
         <Button style={{ margin: "20px" }} type="ghost">
-          dsd
+          MainPage
         </Button>
+        <Link to="/persArea">
+          <Button>Personal Area</Button>
+        </Link>
       </Link>
     </div>
   );

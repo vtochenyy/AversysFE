@@ -7,7 +7,6 @@
 //   ScatterChart,
 // } from "react-chartkick";
 import "chartkick/chart.js";
-
 import "./App.css";
 import InfoRoadMap from "./components/infoRoadMap/InfoRoadMap";
 
