@@ -3,23 +3,21 @@
 }
 .registerMainBlock {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  justify-items: center;
-  padding: 77px 272px 77px 174px;
+  padding: 15px 25px 15px 25px;
 }
 .userInputsBlock {
-  width: 100%;
-  outline: 5px solid yellow;
-  outline-offset: -44px;
-  max-width: 635px;
-  background-color: #0b4436;
-  border-radius: 42px;
+  width: 50%;
 }
 .inputBlockContent {
+  outline: 5px solid yellow;
+  outline-offset: -44px;
+  background-color: #0b4436;
+  border-radius: 42px;
   display: flex;
-  justify-content: center;
-  padding: 90px 0 84px;
+  margin: 0 auto;
+  width: 635px;
+  padding: 55px 0 55px;
   flex-direction: column;
   align-items: center;
 }
@@ -29,11 +27,11 @@
 .inputBlockContent input {
   height: 42px;
   color: #ffa41b;
-  padding: 0 20px;
+  padding: 0 10px;
   font-size: 20px;
   width: 331px;
   background-color: #256152;
-  margin: 0 0 32px 0;
+  // margin: 0 0 32px 0;
   border-radius: 15px;
   border: none;
 }
