@@ -1,4 +1,89 @@
-.check {
-  font-size: 40px;
+* {
   font-family: "Sen";
+}
+.registerMainBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  padding: 77px 272px 77px 174px;
+}
+.userInputsBlock {
+  width: 100%;
+  outline: 5px solid yellow;
+  outline-offset: -44px;
+  max-width: 635px;
+  background-color: #0b4436;
+  border-radius: 42px;
+}
+.inputBlockContent {
+  display: flex;
+  justify-content: center;
+  padding: 90px 0 84px;
+  flex-direction: column;
+  align-items: center;
+}
+.inputBlockContent form {
+  margin: 33px 0 0;
+}
+.inputBlockContent input {
+  height: 42px;
+  color: #ffa41b;
+  padding: 0 20px;
+  font-size: 20px;
+  width: 331px;
+  background-color: #256152;
+  margin: 0 0 32px 0;
+  border-radius: 15px;
+  border: none;
+}
+.inputBlockContent input::placeholder {
+  color: #ffa41b;
+  font-size: 18px;
+}
+.inputBlockContent button {
+  border-radius: 15px;
+}
+.politicBlock {
+  width: 100%;
+  max-width: 371px;
+  color: #428b79;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 16px 0;
+}
+.politicBlock::before {
+  position: absolute;
+  content: "";
+  border-radius: 100%;
+  margin: 6px 0 0 -16px;
+  width: 10px;
+  height: 10px;
+  background-color: #ffa41b;
+}
+.politicBlock span {
+  color: #ffc368;
+}
+.blockIfAuthorizate {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.blockIfAuthorizate img {
+  width: 267px;
+}
+.blockIfAuthorizate h2 {
+  font-size: 40px;
+  margin: 0;
+  color: #0b4436;
+}
+.blockIfAuthorizate p {
+  font-size: 15px;
+  color: #0b4436;
+}
+.blockIfAuthorizate span {
+  color: #ffc368;
 }
