@@ -17,21 +17,24 @@
   display: flex;
   margin: 0 auto;
   width: 635px;
+  height: auto;
   padding: 55px 0 55px;
   flex-direction: column;
   align-items: center;
 }
 .inputBlockContent form {
-  margin: 33px 0 0;
+  margin: 2vh 0 0;
+}
+.inputBlockContent img {
+  width: 6vw;
 }
 .inputBlockContent input {
-  height: 42px;
+  height: 4vh;
   color: #ffa41b;
   padding: 0 10px;
   font-size: 20px;
   width: 331px;
   background-color: #256152;
-  // margin: 0 0 32px 0;
   border-radius: 15px;
   border: none;
 }
@@ -41,12 +44,13 @@
 }
 .inputBlockContent button {
   border-radius: 15px;
+  height: 4vh;
 }
 .politicBlock {
   width: 100%;
   max-width: 371px;
   color: #428b79;
-  font-size: 15px;
+  font-size: 1.5vh;
   letter-spacing: 1.5px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 16px 0;
