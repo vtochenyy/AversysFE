@@ -53,7 +53,8 @@ const RegisterPage = () => {
           <ImageNavigation />
         </div>
       </div>
-      <div className={style.blockIfAuthorizate}>
+      {/*БЛОК ДЛЯ РЕГИСТРАЦИИ ЕСЛИ ПОЛЬЗОВАТЕЛЬ}
+      {/* <div className={style.blockIfAuthorizate}>
         <img
           src={registerPageImage.aversysLogoWhiteBg}
           alt="logo is not found"
@@ -62,7 +63,7 @@ const RegisterPage = () => {
         <p>
           Уже зарегистрированы? <span>Войти</span>
         </p>
-      </div>
+      </div> */}
       {/* <button
         onClick={() => {
           dispatch(getErrorsList);
