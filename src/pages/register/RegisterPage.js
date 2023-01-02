@@ -5,12 +5,13 @@ import { createRegisterState } from "../../redux/reducers/registerReducer";
 import { getErrorsList } from "../../redux/reducers/errorList";
 import { registerPageImage } from "../../images/imagesConfig";
 import ImageNavigation from "../../components/navImages/ImageNavigation";
-
+import { Checkbox } from "antd";
 const RegisterPage = () => {
   const dispatch = useDispatch();
   const errorList = useSelector((state) => {
     return state.errorList.errorListData;
   });
+
   return (
     <div className={style.registerMainBlock}>
       <div className={style.userInputsBlock}>
@@ -42,10 +43,17 @@ const RegisterPage = () => {
             <Form.Item name="password">
               <Input placeholder="Пароль" />
             </Form.Item>
-            <p className={style.politicBlock}>
-              Я ознакомлен(а) с <span>Политикой конфиденциальности</span> и
-              принимаю правила пользования
-            </p>
+            <div className={style.politicBlock}>
+              <Checkbox
+                onChange={(e) => e.target.focus()}
+                autoFocus={false}
+                className={style.checkbox}
+              />
+              <p className={style.politicText}>
+                Я ознакомлен(а) с <span>Политикой конфиденциальности</span> и
+                принимаю правила пользования
+              </p>
+            </div>
             <Button type="primary" htmlType="submit">
               Отправить
             </Button>
