@@ -2,15 +2,15 @@ import { Button, Form, Input } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./style.module.scss";
 import { createRegisterState } from "../../redux/reducers/registerReducer";
-import { getErrorsList } from "../../redux/reducers/errorList";
+// import { getErrorsList } from "../../redux/reducers/errorList";
 import { registerPageImage } from "../../images/imagesConfig";
 import ImageNavigation from "../../components/navImages/ImageNavigation";
 import { Checkbox } from "antd";
 const RegisterPage = () => {
   const dispatch = useDispatch();
-  const errorList = useSelector((state) => {
-    return state.errorList.errorListData;
-  });
+  // const errorList = useSelector((state) => {
+  //   return state.errorList.errorListData;
+  // });
 
   return (
     <div className={style.registerMainBlock}>
@@ -22,16 +22,20 @@ const RegisterPage = () => {
           />
           <Form
             onFinish={(data) => {
-              dispatch(createRegisterState(data));
+              if (data.password.includes(" ") || data.login.includes(" ")) {
+                return alert("probel");
+              } else {
+                dispatch(createRegisterState(data));
+              }
             }}
           >
-            <Form.Item name="firstName">
+            <Form.Item name="firstname">
               <Input placeholder="Имя" />
             </Form.Item>
-            <Form.Item name="lastName">
+            <Form.Item name="lastname">
               <Input placeholder="Фамилия" />
             </Form.Item>
-            <Form.Item name="paternity">
+            <Form.Item name="middlename">
               <Input placeholder="Отчество" />
             </Form.Item>
             <Form.Item name="email">
@@ -41,14 +45,10 @@ const RegisterPage = () => {
               <Input placeholder="Логин" />
             </Form.Item>
             <Form.Item name="password">
-              <Input placeholder="Пароль" />
+              <Input type="password" placeholder="Пароль" />
             </Form.Item>
             <div className={style.politicBlock}>
-              <Checkbox
-                onChange={(e) => e.target.focus()}
-                autoFocus={false}
-                className={style.checkbox}
-              />
+              <Checkbox autoFocus={false} className={style.checkbox} />
               <p className={style.politicText}>
                 Я ознакомлен(а) с <span>Политикой конфиденциальности</span> и
                 принимаю правила пользования
@@ -61,31 +61,6 @@ const RegisterPage = () => {
           <ImageNavigation />
         </div>
       </div>
-      {/*БЛОК ДЛЯ РЕГИСТРАЦИИ ЕСЛИ ПОЛЬЗОВАТЕЛЬ}
-      {/* <div className={style.blockIfAuthorizate}>
-        <img
-          src={registerPageImage.aversysLogoWhiteBg}
-          alt="logo is not found"
-        />
-        <h2>Регистрация пользования</h2>
-        <p>
-          Уже зарегистрированы? <span>Войти</span>
-        </p>
-      </div> */}
-      {/* <button
-        onClick={() => {
-          dispatch(getErrorsList);
-        }}
-      >
-        list
-      </button>
-      <button
-        onClick={() => {
-          console.log(errorList.data);
-        }}
-      >
-        const
-      </button> */}
     </div>
   );
 };

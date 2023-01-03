@@ -1,10 +1,14 @@
 import { Button, Form, Input } from "antd";
 import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { root } from "../../api/root_api";
 import ImageNavigation from "../../components/navImages/ImageNavigation";
 import { imagesAuthorized } from "../../images/imagesConfig";
 import style from "./style.module.scss";
 const AutorizedPage = () => {
+  const [authCheck, setAuthCheck] = useState(true);
+  const navigation = useNavigate();
   return (
     <div className={style.mainBlockAutorized}>
       <div className={style.loginFormBlock}>
@@ -16,15 +20,19 @@ const AutorizedPage = () => {
         <Form
           className={style.formStyles}
           onFinish={(loginData) => {
-            console.log(loginData);
-            axios.post(root.LOGIN, loginData);
+            axios.post(root.LOGIN, loginData).then((e) => {
+              setAuthCheck(e.data.data.isAuth);
+              if (authCheck) {
+                return navigation("/mainPage");
+              }
+            });
           }}
         >
           <Form.Item name="login">
             <Input placeholder="Введите логин" />
           </Form.Item>
           <Form.Item name="password">
-            <Input placeholder="Введите пароль" />
+            <Input type="password" placeholder="Введите пароль" />
           </Form.Item>
           <Button type="ghost" htmlType="submit">
             Вход
