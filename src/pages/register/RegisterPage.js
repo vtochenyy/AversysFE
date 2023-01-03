@@ -2,11 +2,17 @@ import { Button, Form, Input } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./style.module.scss";
 import { createRegisterState } from "../../redux/reducers/registerReducer";
-import { getErrorsList } from "../../redux/reducers/errorList";
 import { registerPageImage } from "../../images/imagesConfig";
 import ImageNavigation from "../../components/navImages/ImageNavigation";
+import { useTranslation } from "react-i18next";
 
 const RegisterPage = () => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
+
   const dispatch = useDispatch();
   const errorList = useSelector((state) => {
     return state.errorList.errorListData;
@@ -15,6 +21,9 @@ const RegisterPage = () => {
     <div className={style.registerMainBlock}>
       <div className={style.userInputsBlock}>
         <div className={style.inputBlockContent}>
+          <div>dasdasdasdasd</div>
+          <button onClick={() => changeLanguage("ru")}>ru</button>
+          <button onClick={() => changeLanguage("en")}>en</button>
           <img
             src={registerPageImage.loadImage}
             alt="loaded images is not found"
@@ -25,7 +34,7 @@ const RegisterPage = () => {
             }}
           >
             <Form.Item name="firstName">
-              <Input placeholder="Имя" />
+              <Input placeholder={t("register.firstname")} />
             </Form.Item>
             <Form.Item name="lastName">
               <Input placeholder="Фамилия" />

@@ -1,0 +1,10 @@
+{
+  "register": {
+    "firstname": "firstname",
+    "lastname": "lastname",
+    "middlename": "middlename",
+    "email": "email",
+    "login": "login",
+    "password": "password"
+  }
+}
