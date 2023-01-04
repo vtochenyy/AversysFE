@@ -1,16 +1,18 @@
 import { Button, Form, Input } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./style.module.scss";
-import { createRegisterState } from "../../redux/reducers/registerReducer";
 // import { getErrorsList } from "../../redux/reducers/errorList";
 import { registerPageImage } from "../../images/imagesConfig";
+import { createRegisterState } from "../../redux/reducers/registerReducer";
 import ImageNavigation from "../../components/navImages/ImageNavigation";
 import { Checkbox } from "antd";
+import { useNavigate } from "react-router-dom";
 const RegisterPage = () => {
   const dispatch = useDispatch();
   // const errorList = useSelector((state) => {
   //   return state.errorList.errorListData;
   // });
+  const navigation = useNavigate();
 
   return (
     <div className={style.registerMainBlock}>
@@ -23,10 +25,13 @@ const RegisterPage = () => {
           <Form
             onFinish={(data) => {
               if (data.password.includes(" ") || data.login.includes(" ")) {
-                return alert("probel");
+                alert("error");
               } else {
+                alert("success");
                 dispatch(createRegisterState(data));
+                return navigation("/autorized");
               }
+              console.log(Object.values(data));
             }}
           >
             <Form.Item name="firstname">

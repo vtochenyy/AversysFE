@@ -1,14 +1,16 @@
 import { Button, Form, Input } from "antd";
 import axios from "axios";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { root } from "../../api/root_api";
 import ImageNavigation from "../../components/navImages/ImageNavigation";
 import { imagesAuthorized } from "../../images/imagesConfig";
+import { appropriation } from "../../redux/reducers/autorizationData";
 import style from "./style.module.scss";
 const AutorizedPage = () => {
-  const [authCheck, setAuthCheck] = useState(true);
   const navigation = useNavigate();
+  const dispatch = useDispatch();
   return (
     <div className={style.mainBlockAutorized}>
       <div className={style.loginFormBlock}>
@@ -21,9 +23,9 @@ const AutorizedPage = () => {
           className={style.formStyles}
           onFinish={(loginData) => {
             axios.post(root.LOGIN, loginData).then((e) => {
-              setAuthCheck(e.data.data.isAuth);
-              if (authCheck) {
-                return navigation("/mainPage");
+              if (e.data.data.isAuth) {
+                dispatch(appropriation(e.data.data.user));
+                return navigation("/persArea");
               }
             });
           }}
