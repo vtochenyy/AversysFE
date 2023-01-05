@@ -1,9 +1,13 @@
 import { Table } from "antd";
+import { useSelector } from "react-redux";
 import ImageNavigation from "../../components/navImages/ImageNavigation";
 import { personalPageImage } from "../../images/imagesConfig";
 import style from "./style.module.scss";
 
 const PersonalArea = () => {
+  const userData = useSelector((state) => {
+    return state.autorizationData;
+  });
   const columns = [
     {
       title: "Name",
@@ -41,7 +45,7 @@ const PersonalArea = () => {
   return (
     <div className={style.pageStructure}>
       <div className={style.lastActivitiesBlock}>
-        <h3>Добро пожаловать "имя пользователя"</h3>
+        <h3>Добро пожаловать {userData.firstname}</h3>
         <p>Последние активности</p>
         <Table
           pagination={false}
@@ -57,8 +61,8 @@ const PersonalArea = () => {
           пользователя
         </h2>
         <img src={personalPageImage.userImage} alt="UserImg is not found " />
-        <p>Имя пользователя</p>
-        <p>Фамилия пользователя</p>
+        <p>{userData.firstname}</p>
+        <p>{userData.lastname}</p>
         <p>Занимаемая должность</p>
         <ImageNavigation />
       </div>
