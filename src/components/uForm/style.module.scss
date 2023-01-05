@@ -34,7 +34,7 @@
   font-family: "Sen";
 }
 
-.inputBlockContent input {
+.registerFormBlock input {
   height: 4vh;
   color: #ffa41b;
   padding: 0 10px;
@@ -44,11 +44,11 @@
   border-radius: 15px;
   border: none;
 }
-.inputBlockContent input::placeholder {
+.registerFormBlock input::placeholder {
   color: #ffa41b;
   font-size: 18px;
 }
-.inputBlockContent button {
+.registerFormBlock button {
   border-radius: 15px;
   height: 4vh;
 }

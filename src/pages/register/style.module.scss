@@ -3,12 +3,11 @@
 }
 .registerMainBlock {
   display: flex;
+  width: 100%;
   align-items: center;
   padding: 15px 25px 15px 25px;
 }
-.userInputsBlock {
-  width: 100%;
-}
+
 .inputBlockContent {
   outline: 5px solid yellow;
   outline-offset: -44px;

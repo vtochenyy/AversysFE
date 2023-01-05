@@ -42,73 +42,76 @@ const Uform = (formType) => {
     );
   } else if (formType === registerType) {
     return (
-      <Form
-        onFinish={(data) => {
-          if (!politicState) {
-            notification.open({
-              message: "Необходимо ознакомиться с политикой конфиденциальности",
-              placement: "topRight",
-              type: "error",
-              btn: true,
-            });
-          } else {
-            if (data.password.includes(" ") || data.login.includes(" ")) {
+      <div className={style.registerFormBlock}>
+        <Form
+          onFinish={(data) => {
+            if (!politicState) {
               notification.open({
-                message: "Пробелы недопустимы в полях логина и пароля",
+                message:
+                  "Необходимо ознакомиться с политикой конфиденциальности",
                 placement: "topRight",
                 type: "error",
                 btn: true,
               });
             } else {
-              //можно сделать onclose или таймаут
-              notification.open({
-                message: "Пользователь успешно зарегестрирован",
-                placement: "topRight",
-                type: "success",
-                btn: true,
-              });
-              dispatch(createRegisterState(data));
-              return navigation("/autorized");
+              if (data.password.includes(" ") || data.login.includes(" ")) {
+                notification.open({
+                  message: "Пробелы недопустимы в полях логина и пароля",
+                  placement: "topRight",
+                  type: "error",
+                  btn: true,
+                });
+              } else {
+                //можно сделать onclose или таймаут
+                notification.open({
+                  message: "Пользователь успешно зарегестрирован",
+                  placement: "topRight",
+                  type: "success",
+                  btn: true,
+                });
+                dispatch(createRegisterState(data));
+                return navigation("/autorized");
+              }
             }
-          }
-        }}
-      >
-        <Form.Item name="firstname">
-          <Input placeholder="Имя" />
-        </Form.Item>
-        <Form.Item name="lastname">
-          <Input placeholder="Фамилия" />
-        </Form.Item>
-        <Form.Item name="middlename">
-          <Input placeholder="Отчество" />
-        </Form.Item>
-        <Form.Item name="email">
-          <Input placeholder="Ваша электронная почта" />
-        </Form.Item>
-        <Form.Item name="login">
-          <Input placeholder="Логин" />
-        </Form.Item>
-        <Form.Item name="password">
-          <Input type="password" placeholder="Пароль" />
-        </Form.Item>
-        <div className={style.politicBlock}>
-          <Checkbox
-            checked={politicState}
-            onChange={() => {
-              setPoliticState(!politicState);
-            }}
-            autoFocus={false}
-            className={style.checkbox}
-          />
-          <p className={style.politicText}>
-            Я ознакомлен(а) с <span>Политикой конфиденциальности</span> и
-            принимаю правила пользования
-          </p>
-        </div>
-        <Button type="primary" htmlType="submit">
-          Отправить
-        </Button>
-      </Form>
+          }}
+        >
+          <Form.Item name="firstname">
+            <Input placeholder="Имя" />
+          </Form.Item>
+          <Form.Item name="lastname">
+            <Input placeholder="Фамилия" />
+          </Form.Item>
+          <Form.Item name="middlename">
+            <Input placeholder="Отчество" />
+          </Form.Item>
+          <Form.Item name="email">
+            <Input placeholder="Ваша электронная почта" />
+          </Form.Item>
+          <Form.Item name="login">
+            <Input placeholder="Логин" />
+          </Form.Item>
+          <Form.Item name="password">
+            <Input type="password" placeholder="Пароль" />
+          </Form.Item>
+          <div className={style.politicBlock}>
+            <Checkbox
+              checked={politicState}
+              onChange={() => {
+                setPoliticState(!politicState);
+              }}
+              autoFocus={false}
+              className={style.checkbox}
+            />
+            <p className={style.politicText}>
+              Я ознакомлен(а) с <span>Политикой конфиденциальности</span> и
+              принимаю правила пользования
+            </p>
+          </div>
+          <Button type="primary" htmlType="submit">
+            Отправить
+          </Button>
+        </Form>
+      </div>
     );
   }
 };

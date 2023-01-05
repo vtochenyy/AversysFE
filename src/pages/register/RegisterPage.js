@@ -11,15 +11,13 @@ const RegisterPage = () => {
   // });
   return (
     <div className={style.registerMainBlock}>
-      <div className={style.userInputsBlock}>
-        <div className={style.inputBlockContent}>
-          <img
-            src={registerPageImage.loadImage}
-            alt="loaded images is not found"
-          />
-          {Uform(registerType)}
-          <ImageNavigation />
-        </div>
+      <div className={style.inputBlockContent}>
+        <img
+          src={registerPageImage.loadImage}
+          alt="loaded images is not found"
+        />
+        {Uform(registerType)}
+        <ImageNavigation />
       </div>
     </div>
   );
