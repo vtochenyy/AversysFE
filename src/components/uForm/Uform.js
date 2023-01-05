@@ -1,4 +1,4 @@
-import { Button, Checkbox, Form, Input, notification } from "antd";
+import { Button, Checkbox, Form, Input, notification, Tooltip } from "antd";
 import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -6,33 +6,54 @@ import { useNavigate } from "react-router-dom";
 import { root } from "../../api/root_api";
 import { appropriation } from "../../redux/reducers/autorizationData";
 import { createRegisterState } from "../../redux/reducers/registerReducer";
-import { autorizedType, registerType } from "../../variables/formTypes";
+import { AUTORIZATIONTYPE, REGISTERTYPE } from "../../variables/formTypes";
 import style from "./style.module.scss";
 
 const Uform = (formType) => {
   const navigation = useNavigate();
   const dispatch = useDispatch();
   const [politicState, setPoliticState] = useState(false);
-
-  if (formType === autorizedType) {
+  const [politicMessage, setPoliticMessage] = useState(false);
+  const [checkForSpace, setCheckForSpace] = useState(false);
+  const [checkAutorization, setCheckAutorization] = useState(false);
+  if (formType === AUTORIZATIONTYPE) {
     return (
       <div className={style.loginFormBlock}>
         <Form
           className={style.formStyles}
           onFinish={(loginData) => {
-            axios.post(root.LOGIN, loginData).then((e) => {
-              if (e.data.data.isAuth) {
-                dispatch(appropriation(e.data.data.user));
-                return navigation("/persArea");
-              }
-            });
+            axios
+              .post(root.LOGIN, loginData)
+              .then((e) => {
+                if (e.data.data.isAuth) {
+                  dispatch(appropriation(e.data.data.user));
+                  return navigation("/persArea");
+                }
+              })
+              .catch(() => {
+                setCheckAutorization(true);
+              });
           }}
         >
-          <Form.Item name="login">
-            <Input placeholder="Введите логин" />
-          </Form.Item>
+          <Tooltip
+            placement="rightTop"
+            color="#A62F00"
+            open={checkAutorization}
+            title={"Неверное введем логин или пароль"}
+          >
+            <Form.Item name="login">
+              <Input
+                status={checkAutorization && "error"}
+                placeholder="Введите логин"
+              />
+            </Form.Item>
+          </Tooltip>
           <Form.Item name="password">
-            <Input type="password" placeholder="Введите пароль" />
+            <Input
+              status={checkAutorization && "error"}
+              type="password"
+              placeholder="Введите пароль"
+            />
           </Form.Item>
           <Button type="ghost" htmlType="submit">
             Вход
@@ -40,35 +61,17 @@ const Uform = (formType) => {
         </Form>
       </div>
     );
-  } else if (formType === registerType) {
+  } else if (formType === REGISTERTYPE) {
     return (
       <div className={style.registerFormBlock}>
         <Form
           onFinish={(data) => {
             if (!politicState) {
-              notification.open({
-                message:
-                  "Необходимо ознакомиться с политикой конфиденциальности",
-                placement: "topRight",
-                type: "error",
-                btn: true,
-              });
+              setPoliticMessage(true);
             } else {
               if (data.password.includes(" ") || data.login.includes(" ")) {
-                notification.open({
-                  message: "Пробелы недопустимы в полях логина и пароля",
-                  placement: "topRight",
-                  type: "error",
-                  btn: true,
-                });
+                setCheckForSpace(true);
               } else {
-                //можно сделать onclose или таймаут
-                notification.open({
-                  message: "Пользователь успешно зарегестрирован",
-                  placement: "topRight",
-                  type: "success",
-                  btn: true,
-                });
                 dispatch(createRegisterState(data));
                 return navigation("/autorized");
               }
@@ -87,21 +90,50 @@ const Uform = (formType) => {
           <Form.Item name="email">
             <Input placeholder="Ваша электронная почта" />
           </Form.Item>
-          <Form.Item name="login">
-            <Input placeholder="Логин" />
-          </Form.Item>
-          <Form.Item name="password">
-            <Input type="password" placeholder="Пароль" />
-          </Form.Item>
+          <Tooltip
+            color="#A62F00"
+            placement="rightTop"
+            open={checkForSpace}
+            title={"Пробелы недопустимы в полях логина и пароля"}
+          >
+            <Form.Item name="login">
+              <Input
+                status={checkForSpace && "error"}
+                spellCheck="true"
+                placeholder="Логин"
+              />
+            </Form.Item>
+          </Tooltip>
+          <Tooltip
+            placement="rightTop"
+            color="#A62F00"
+            open={checkForSpace}
+            title={"Пробелы недопустимы в полях логина и пароля"}
+          >
+            <Form.Item name="password">
+              <Input
+                status={checkForSpace && "error"}
+                type="password"
+                placeholder="Пароль"
+              />
+            </Form.Item>
+          </Tooltip>
           <div className={style.politicBlock}>
-            <Checkbox
-              checked={politicState}
-              onChange={() => {
-                setPoliticState(!politicState);
-              }}
-              autoFocus={false}
-              className={style.checkbox}
-            />
+            <Tooltip
+              placement="bottom"
+              color="#A62F00"
+              open={politicMessage}
+              title={"Необходимо ознакомиться с политикой конфиденциальности"}
+            >
+              <Checkbox
+                checked={politicState}
+                onChange={() => {
+                  setPoliticState(!politicState);
+                }}
+                autoFocus={false}
+                className={style.checkbox}
+              />
+            </Tooltip>
             <p className={style.politicText}>
               Я ознакомлен(а) с <span>Политикой конфиденциальности</span> и
               принимаю правила пользования

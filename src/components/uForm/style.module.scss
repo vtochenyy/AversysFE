@@ -6,12 +6,10 @@
 }
 
 .formStyles input {
-  border: none;
-  background-color: #0b4436;
+  background-color: #0b4436 !important;
   width: 495px;
   height: 71px;
   color: #ffa41b;
-
   border-radius: 18px;
 }
 
@@ -40,9 +38,8 @@
   padding: 0 10px;
   font-size: 20px;
   width: 331px;
-  background-color: #256152;
+  background-color: #256152 !important;
   border-radius: 15px;
-  border: none;
 }
 .registerFormBlock input::placeholder {
   color: #ffa41b;
@@ -50,7 +47,6 @@
 }
 .registerFormBlock button {
   border-radius: 15px;
-  height: 4vh;
 }
 .politicBlock {
   display: flex;

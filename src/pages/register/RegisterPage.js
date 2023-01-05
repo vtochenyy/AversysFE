@@ -4,7 +4,7 @@ import style from "./style.module.scss";
 import { registerPageImage } from "../../images/imagesConfig";
 import ImageNavigation from "../../components/navImages/ImageNavigation";
 import Uform from "../../components/uForm/Uform";
-import { registerType } from "../../variables/formTypes";
+import { REGISTERTYPE } from "../../variables/formTypes";
 const RegisterPage = () => {
   // const errorList = useSelector((state) => {
   //   return state.errorList.errorListData;
@@ -16,7 +16,7 @@ const RegisterPage = () => {
           src={registerPageImage.loadImage}
           alt="loaded images is not found"
         />
-        {Uform(registerType)}
+        {Uform(REGISTERTYPE)}
         <ImageNavigation />
       </div>
     </div>

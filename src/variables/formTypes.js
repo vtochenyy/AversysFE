@@ -1,2 +1,2 @@
-export const autorizedType = "autorized";
-export const registerType = "register";
+export const AUTORIZATIONTYPE = "AUTORIZATIONTYPE";
+export const REGISTERTYPE = "REGISTERTYPE";

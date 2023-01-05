@@ -35,11 +35,16 @@
 
 .registerBlock {
   display: flex;
-  justify-content: space-between;
   width: 350px;
+
+  justify-content: space-between;
   margin: 20px 0 0 0;
 }
 .registerBlock span {
   font-size: 24px;
   font-weight: 400;
+}
+.registerBlock span:first-child {
+  padding: 0 25px 0 0;
+  border-right: 1px solid #fff;
 }

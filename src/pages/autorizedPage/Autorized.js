@@ -1,7 +1,7 @@
 import ImageNavigation from "../../components/navImages/ImageNavigation";
 import Uform from "../../components/uForm/Uform";
 import { imagesAuthorized } from "../../images/imagesConfig";
-import { autorizedType } from "../../variables/formTypes";
+import { AUTORIZATIONTYPE } from "../../variables/formTypes";
 import style from "./style.module.scss";
 const AutorizedPage = () => {
   return (
@@ -12,10 +12,9 @@ const AutorizedPage = () => {
         <div>
           <ImageNavigation />
         </div>
-        {Uform(autorizedType)}
+        {Uform(AUTORIZATIONTYPE)}
         <div className={style.registerBlock}>
           <span>Регистрация</span>
-          <span>|</span>
           <span>Забыли пароль?</span>
         </div>
       </div>
