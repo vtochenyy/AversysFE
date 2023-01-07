@@ -1,0 +1,10 @@
+{
+  "register": {
+    "firstname": "Имя",
+    "lastname": "Фамилия",
+    "middlename": "Отчество",
+    "email": "Электронная почта",
+    "login": "Логин",
+    "password": "Пароль"
+  }
+}

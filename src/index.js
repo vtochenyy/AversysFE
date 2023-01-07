@@ -1,7 +1,6 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-// import App from "./App";
 import { ConfigProvider } from "antd";
 import "antd/dist/antd.variable.min.css";
 import { BrowserRouter } from "react-router-dom";
