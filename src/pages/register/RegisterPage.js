@@ -1,6 +1,6 @@
-import { Button, Form, Input } from "antd";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import style from "./style.module.scss";
+<<<<<<< HEAD
 import { createRegisterState } from "../../redux/reducers/registerReducer";
 import { registerPageImage } from "../../images/imagesConfig";
 import ImageNavigation from "../../components/navImages/ImageNavigation";
@@ -63,29 +63,27 @@ const RegisterPage = () => {
         </div>
       </div>
       <div className={style.blockIfAuthorizate}>
+=======
+// import { getErrorsList } from "../../redux/reducers/errorList";
+import { registerPageImage } from "../../images/imagesConfig";
+import ImageNavigation from "../../components/navImages/ImageNavigation";
+import Uform from "../../components/uForm/Uform";
+import { REGISTERTYPE } from "../../variables/formTypes";
+const RegisterPage = () => {
+  // const errorList = useSelector((state) => {
+  //   return state.errorList.errorListData;
+  // });
+  return (
+    <div className={style.registerMainBlock}>
+      <div className={style.inputBlockContent}>
+>>>>>>> dev
         <img
-          src={registerPageImage.aversysLogoWhiteBg}
-          alt="logo is not found"
+          src={registerPageImage.loadImage}
+          alt="loaded images is not found"
         />
-        <h2>Регистрация пользования</h2>
-        <p>
-          Уже зарегистрированы? <span>Войти</span>
-        </p>
+        {Uform(REGISTERTYPE)}
+        <ImageNavigation />
       </div>
-      {/* <button
-        onClick={() => {
-          dispatch(getErrorsList);
-        }}
-      >
-        list
-      </button>
-      <button
-        onClick={() => {
-          console.log(errorList.data);
-        }}
-      >
-        const
-      </button> */}
     </div>
   );
 };

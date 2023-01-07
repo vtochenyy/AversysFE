@@ -1,10 +1,13 @@
 import style from "./style.module.scss";
 import { imagesNavComponent } from "../../images/imagesConfig";
+import { Link } from "react-router-dom";
 
 const ImageNavigation = () => {
   return (
     <div className={style.authorizedImageGroup}>
-      <img src={imagesNavComponent.asysAbout} alt="asysAbout is not found" />
+      <Link to="/mainPage">
+        <img src={imagesNavComponent.asysAbout} alt="asysAbout is not found" />
+      </Link>
       <img
         src={imagesNavComponent.asysControl}
         alt="asysControl is not found"

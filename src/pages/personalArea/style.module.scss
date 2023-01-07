@@ -1,12 +1,16 @@
 .pageStructure {
   display: flex;
   width: 100%;
-  padding: 87px 124px 100px 104px;
+  height: 100vh;
+  padding: 15px 104px 15px 104px;
   justify-content: space-around;
 }
 .lastActivitiesBlock {
   width: 100%;
-  margin: 80px 35px 0 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 35px 0 0;
+  justify-content: center;
   max-width: 951px;
   text-align: center;
 }
@@ -24,6 +28,9 @@
 .userInfoBlock {
   padding: 20px 30px 10px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   max-width: 580px;
   border-radius: 38px;
   background-color: #256152;
@@ -34,6 +41,7 @@
   font-family: "Sen";
   color: #ffa41b;
 }
+
 .userInfoBlock h2 {
   font-size: 28px;
   line-height: 40px;
@@ -43,13 +51,13 @@
   color: #ffa41b;
 }
 .userInfoBlock > img {
-  width: 295px;
+  height: 25vh;
   margin: 29px 0 43px 0;
 }
 .userInfoBlock p {
   font-size: 24px;
   font-family: "Sen";
   color: #ffa41b;
-  margin: 0 0 5px 0;
+  margin: 0 0 15px 0;
   font-style: normal;
 }

@@ -1,0 +1,66 @@
+//////////////////////////////////////AUTORIZED STYLES
+.formStyles input::placeholder {
+  color: #ffa41b;
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+.formStyles input {
+  background-color: #0b4436 !important;
+  width: 495px;
+  height: 71px;
+  color: #ffa41b;
+  border-radius: 18px;
+}
+
+.loginFormBlock button {
+  background-color: #0b4436;
+  width: 200px;
+  height: 50px;
+  border: none;
+  color: #ffa41b;
+  border-radius: 18px;
+}
+
+.loginFormBlock button span {
+  color: #ffa41b;
+  font-size: 20px;
+}
+
+//////////////////////////////////////REGISTER STYLES
+* {
+  font-family: "Sen";
+}
+
+.registerFormBlock input {
+  height: 4vh;
+  color: #ffa41b;
+  padding: 0 10px;
+  font-size: 20px;
+  width: 331px;
+  background-color: #256152 !important;
+  border-radius: 15px;
+}
+.registerFormBlock input::placeholder {
+  color: #ffa41b;
+  font-size: 18px;
+}
+.registerFormBlock button {
+  border-radius: 15px;
+}
+.politicBlock {
+  display: flex;
+}
+.politicText {
+  width: 100%;
+  max-width: 371px;
+  color: #428b79;
+  font-size: 1.5vh;
+  letter-spacing: 1.5px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0 0 16px 10px;
+}
+
+.politicText span {
+  color: #ffc368;
+}
