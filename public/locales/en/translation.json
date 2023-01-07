@@ -6,5 +6,8 @@
     "email": "email",
     "login": "login",
     "password": "password"
+  },
+  "mainPage": {
+    "coming": "welcome to you"
   }
 }
