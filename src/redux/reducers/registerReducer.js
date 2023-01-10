@@ -12,7 +12,7 @@ export const registerReducer = createSlice({
   reducers: {
     createRegisterState: (state, action) => {
       state.registerInfo = action.payload;
-      axios.post(root.REGISTER, action.payload);
+      axios.post(root.REGISTER, action.payload, {withCredentials: true});
     },
   },
 });

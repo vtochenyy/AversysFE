@@ -23,7 +23,7 @@ const Uform = (formType) => {
           className={style.formStyles}
           onFinish={(loginData) => {
             axios
-              .post(root.LOGIN, loginData)
+              .post(root.LOGIN, loginData, {withCredentials: true})
               .then((e) => {
                 if (e.data.data.isAuth) {
                   dispatch(appropriation(e.data.data.user));
